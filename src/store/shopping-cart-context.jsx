@@ -95,6 +95,13 @@ export default function CartContextProvider({ children }) {
     });
   }
 
+  function handleAddItemToCart(id) {
+    shoppingCartDispatch({
+      type: "ADD_ITEM",
+      payload: id,
+    });
+  }
+
   const ctxValue = {
     items: shoppingCartState.items,
     addItemToCart: handleAddItemToCart,
